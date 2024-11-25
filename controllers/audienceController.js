@@ -50,7 +50,7 @@ const getAudienceSizeHandler = async (rules) => {
           condition[rule.field] = { $lt: value };
           break;
         case "=":
-          condition[rule.field] = value;
+          condition[rule.field] = { $eq: value };
           break;
         case "!=":
           condition[rule.field] = { $ne: value };

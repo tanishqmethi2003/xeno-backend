@@ -5,6 +5,7 @@ const { connectDB } = require('./config/db');
 const dataIngestionRoutes = require('./routes/dataIngestionRoutes');
 const campaignRoutes = require('./routes/campaignRoutes');
 const audienceRoutes = require('./routes/audienceRoutes');
+const metricRoutes = require('./routes/metricRoutes');
 const testRoutes = require('./routes/testRoutes');
 const cors = require('cors');
 
@@ -15,6 +16,7 @@ app.use(bodyParser.json());
 app.use('/api/data-ingestion', dataIngestionRoutes);
 app.use('/api/campaigns', campaignRoutes);
 app.use('/api/audiences', audienceRoutes);
+app.use('/api/metric', metricRoutes)
 app.use('/api', testRoutes); 
 
 const startServer = async () => {
